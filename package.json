@@ -7,11 +7,16 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "watch": "sass src/style/style.scss:src/index.css --no-source-map --watch",
+    "style": "sass src/style/style.scss:src/index.css --no-source-map"
   },
   "dependencies": {
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-leaflet": "^4.2.1",
+    "sass": "^1.81.0",
+    "socket.io-client": "^4.8.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",
