@@ -1,0 +1,30 @@
+.card-container {
+    border: 1px solid $orange;
+    box-sizing: border-box;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card {
+    border: 1px solid #ccc;
+    width: 100%;
+    box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $body-font-size * $line-height;
+}
+
+.card-title {
+    font-size: $body-font-size;
+    display: block;
+    color: $light-blue;
+    background-color: lighten($orange, 20%);
+    padding: 4px 12px;
+    margin-top: 0;
+}
+
+.card-info {
+    font-size: $body-font-size * 0.8;
+    color: #444;
+    padding: 4px 12px;
+}

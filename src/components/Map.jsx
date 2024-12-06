@@ -5,10 +5,9 @@ import 'leaflet/dist/leaflet.css'
 const Map = () => {
   const [center, setCenter] = useState({ lat: 59.329323, lng: 18.068581 })
   return (
-    <MapContainer
+    <MapContainer className="map"
     center={center}
     zoom={13}
-    style={{ width: '100vw', height: '100vh' }}
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
