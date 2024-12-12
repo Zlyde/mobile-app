@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const UserLogin = () => {
-    /* const [email, setEmail] = useState('');
+  /* const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const { error, setError } = useMessage();
     const { connectSocket } = useSocket();
@@ -38,14 +38,14 @@ const UserLogin = () => {
         }
     }; */
 
-    return (
-        <div>
-            <h1>Login</h1>
-            <Link key="/map" to="/map">
-                Karta
-            </Link>
-        </div>
-    );
+  return (
+    <div>
+      <h1>Login</h1>
+      <Link key="/map" to="/map">
+        Karta
+      </Link>
+    </div>
+  );
 };
 
 export default UserLogin;

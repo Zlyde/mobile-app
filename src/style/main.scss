@@ -1,19 +1,19 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .main {
-    margin: 0 auto;
-    max-width: min-content;
-    min-width: 300px;
-    min-height: 78vh;
-    background: $white;
-    border-left: 1px solid $light-grey;
-    border-right: 1px solid $light-grey;
-    padding: 1rem;
-    margin-bottom: 1.4rem;
-    line-height: $line-height;
-    font-size: $body-font-size;
+  margin: 0 auto;
+  max-width: min-content;
+  min-width: 300px;
+  min-height: 78vh;
+  background: $white;
+  border-left: 1px solid $light-grey;
+  border-right: 1px solid $light-grey;
+  padding: 1rem;
+  margin-bottom: 1.4rem;
+  line-height: $line-height;
+  font-size: $body-font-size;
 }
