@@ -402,7 +402,9 @@ p {
   right: 0;
   transform: translateY(100%);
   opacity: 0;
-  transition: opacity 500ms, transform 500ms;
+  transition:
+    opacity 500ms,
+    transform 500ms;
 }
 
 .toast.visible {
