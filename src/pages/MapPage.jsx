@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { MapContainer, TileLayer, Polyline } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
 import Map from "../components/Map";
 import { fetchCities } from "../utils/ApiCall";
 
