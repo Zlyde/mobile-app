@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const UserLogin = () => {
+const UserLoginPage = () => {
   /* const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const { error, setError } = useMessage();
@@ -48,4 +48,4 @@ const UserLogin = () => {
   );
 };
 
-export default UserLogin;
+export default UserLoginPage;

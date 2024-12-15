@@ -1,24 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { MapContainer, TileLayer, Polyline } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import City from "./City";
+import City from "../components/City";
+import { fetchCities } from "../utils/ApiCall";
 
-const Map = () => {
+const MapPage = () => {
   const [center, setCenter] = useState({ lat: 59.329323, lng: 18.068581 });
   const [cities, setCities] = useState([])
 
-  const fetchCities = async () => {
-    const response = await fetch('http://localhost:5001/api/city')
-    if (response) {
-      const citiesData = await response.json()
-      setCities(citiesData)
-    } else {
-      console.log('error fetching cities data')
-    }
+  const getCities = async () => {
+    const data = await fetchCities()
+    setCities(data)
   }
 
   useEffect(() => {
-    fetchCities()
+    getCities()
   }, [])
 
   return (
@@ -34,4 +30,4 @@ const Map = () => {
   );
 };
 
-export default Map;
+export default MapPage;
