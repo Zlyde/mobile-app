@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { MapContainer, TileLayer, Polyline } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import City from "../components/City";
+import Map from "../components/Map";
 import { fetchCities } from "../utils/ApiCall";
 
 const MapPage = () => {
@@ -17,17 +17,7 @@ const MapPage = () => {
     getCities()
   }, [])
 
-  return (
-    <MapContainer className="map" center={center} zoom={13}>
-      <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      />
-      {cities.map((city) => (
-        <City key={city._id} boundary={city.boundary} color={city.color} />
-      ))}
-    </MapContainer>
-  );
+  return <Map center={center} cities={cities} />
 };
 
 export default MapPage;
