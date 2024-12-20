@@ -38,12 +38,19 @@ const UserLoginPage = () => {
         }
     }; */
 
+  const handleGitHubLogin = () => {
+    window.location.href = 'http://localhost:5001/api/auth/github'
+  }
+
   return (
     <div>
       <h1>Login</h1>
-      <Link key="/map" to="/map">
+      <button onClick={handleGitHubLogin}>
+        Login with GitHub
+      </button>
+      {/* <Link key="/map" to="/map">
         Karta
-      </Link>
+      </Link> */}
     </div>
   );
 };
