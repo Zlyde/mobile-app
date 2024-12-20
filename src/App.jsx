@@ -3,6 +3,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import { UserProvider } from "./contex/UserContext";
 import MainLayout from "./layout/MainLayout";
 import UserLoginPage from "./pages/UserLoginPage";
+import UserRegisterPage from "./pages/UserRegisterPage";
 import GitCallback from "./pages/GitCallback";
 import MapPage from "./pages/MapPage";
 
@@ -11,6 +12,7 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={< MainLayout />}>
         <Route index element={<UserLoginPage />}/>
+        <Route path="/register" element={<UserRegisterPage />}/>
         <Route path='/oauth/callback' element={<GitCallback />}/>
         <Route path="/map" element={<MapPage />}/>
       </Route>

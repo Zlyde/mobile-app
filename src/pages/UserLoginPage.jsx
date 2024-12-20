@@ -70,9 +70,9 @@ const UserLoginPage = () => {
       <button onClick={handleGitHubLogin}>
         Login with GitHub
       </button>
-      {/* <Link key="/map" to="/map">
-        Karta
-      </Link> */}
+      <Link to="/register">
+        Registrera dig
+      </Link>
     </div>
   );
 };
