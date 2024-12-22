@@ -1,0 +1,49 @@
+import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useUserContext } from '../contex/UserContext'
+
+const GitCallback = () => {
+  const navigate = useNavigate()
+  const { login } = useUserContext()
+
+  useEffect(() => {
+    
+    const user = async () => {
+      try {
+        const storedUser = localStorage.getItem('user')
+        const storedToken = localStorage.getItem('token')
+  
+        if (storedUser && storedToken) {
+          navigate('/map')
+          return
+        }
+
+        const query = new URLSearchParams(window.location.search)
+        const token = query.get('token')
+        const userStr = query.get('user')
+
+        if (!token || !userStr) {
+          navigate('/login')
+          return
+        }
+        
+        const user = JSON.parse(decodeURIComponent(userStr))
+        console.log('User Loged in', user, token)
+        login(user, token)
+        navigate('/map')
+      } catch (error) {
+        console.log('Failed', error)
+        navigate('/login')
+      }
+    }
+
+    user()
+  }, [login, navigate])
+  return (
+    <div>
+      loggin in...
+    </div>
+  )
+}
+
+export default GitCallback
