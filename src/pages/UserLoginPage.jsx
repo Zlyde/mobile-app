@@ -23,7 +23,7 @@ const UserLoginPage = () => {
       const data = await response.json()
       const {user, token, message} = data.data
       login(user, token)
-      toast.success(message)
+      toast.success(` Vällkommen ${user.name}`)
       navigate('/map')
     } catch (error){
       console.log(error)

@@ -2,8 +2,9 @@ import React from 'react'
 import { MapContainer, TileLayer } from 'react-leaflet'
 import "leaflet/dist/leaflet.css";
 import City from "../components/City";
+import Bike from './Bike';
 
-const Map = ({ center, cities }) => {
+const Map = ({ center, cities, bikes }) => {
   return (
     <MapContainer className="map" center={center} zoom={13}>
       <TileLayer
@@ -12,6 +13,10 @@ const Map = ({ center, cities }) => {
       />
       {cities.map((city) => (
         <City key={city._id} boundary={city.boundary} color={city.color} />
+      ))}
+
+      {bikes.map((bike) => (
+        <Bike key={bike._id} bike={bike}/>      
       ))}
     </MapContainer>
   )

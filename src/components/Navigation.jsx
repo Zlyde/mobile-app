@@ -1,11 +1,23 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useUserContext } from "../contex/UserContext";
+
 
 const Navigation = () => {
+  const { logout  } = useUserContext()
+  const userData = localStorage.getItem('user')
+  const user = JSON.parse(userData)
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+    logout()
+    navigate('/')
+  }
+
   const routes = [
-    { path: "/", name: "Login", hidden: false },
-    { path: "/logout", name: "Logout", hidden: true },
-    { path: "/register", name: "Register", hidden: true },
+    { path: "/", name: "Login", hidden: !!user },
+    // { path: "/logout", name: "Logout", hidden: !user },
+    { path: "/register", name: "Register", hidden: !!user },
     { path: "/verify-email", name: "Verify Email", hidden: true },
     { path: "/user-verified", name: "User Verified", hidden: true },
     {
@@ -14,9 +26,9 @@ const Navigation = () => {
       hidden: true,
     },
     { path: "/reset-password", name: "Reset Password", hidden: true },
-    { path: "/map", name: "Karta", hidden: false },
-    { path: "/rent-bike", name: "Hyr", hidden: false },
-    { path: "/return-bike", name: "Avsluta", hidden: false },
+    { path: "/map", name: "Karta", hidden: !user },
+    { path: "/rent-bike", name: "Hyr", hidden: !user },
+    { path: "/return-bike", name: "Avsluta", hidden: !user },
   ];
 
   return (
@@ -28,6 +40,13 @@ const Navigation = () => {
             {route.name}
           </Link>
         ))}
+        { user && (
+          <button
+          onClick={handleLogout}
+          >
+            Logout
+          </button>
+        )}
     </nav>
   );
 };
