@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useUserContext } from "../contex/UserContext";
+import { useUserContext } from "../context/UserContext";
 import { userLogin } from "../utils/AuthCall";
 import { toast } from "react-toastify";
 
@@ -23,7 +23,7 @@ const UserLoginPage = () => {
       const data = await response.json()
       const {user, token, message} = data.data
       login(user, token)
-      toast.success(` Vällkommen ${user.name}`)
+      toast.success(` Välkommen ${user.name}`)
       navigate('/map')
     } catch (error){
       console.log(error)
