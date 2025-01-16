@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useUserContext } from '../contex/UserContext'
+import { useUserContext } from '../context/UserContext'
 
 const GitCallback = () => {
   const navigate = useNavigate()
@@ -28,7 +28,7 @@ const GitCallback = () => {
         }
         
         const user = JSON.parse(decodeURIComponent(userStr))
-        console.log('User Loged in', user, token)
+        console.log('User Logged In', user, token)
         login(user, token)
         navigate('/map')
       } catch (error) {
@@ -41,7 +41,7 @@ const GitCallback = () => {
   }, [login, navigate])
   return (
     <div>
-      loggin in...
+      Logging in...
     </div>
   )
 }

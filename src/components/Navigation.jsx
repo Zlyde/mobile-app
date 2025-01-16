@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useUserContext } from "../contex/UserContext";
+import { useUserContext } from "../context/UserContext";
 
 
 const Navigation = () => {
@@ -26,9 +26,8 @@ const Navigation = () => {
       hidden: true,
     },
     { path: "/reset-password", name: "Reset Password", hidden: true },
-    { path: "/map", name: "Karta", hidden: !user },
-    { path: "/rent-bike", name: "Hyr", hidden: !user },
-    { path: "/return-bike", name: "Avsluta", hidden: !user },
+    { path: "/map", name: "Hyr", hidden: !user },
+    { path: "/ongoing", name: "Pågående", hidden: !user }
   ];
 
   return (
@@ -41,7 +40,7 @@ const Navigation = () => {
           </Link>
         ))}
         { user && (
-          <button
+          <button className="blue-button"
           onClick={handleLogout}
           >
             Logout

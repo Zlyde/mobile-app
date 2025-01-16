@@ -1,9 +1,12 @@
 import React from 'react'
 import { Marker, Popup } from 'react-leaflet'
+import { useNavigate } from 'react-router-dom';
 import L from 'leaflet'
 import scooterImg from '../assets/scooter.png'
 
 const Bike = ({ bike }) => {
+  const navigate = useNavigate();
+  
   if (!bike || !bike.location || !bike.location.coordinates || bike.status !== "available") {
     return null
   }
@@ -23,6 +26,10 @@ const Bike = ({ bike }) => {
     borderRadius: "5px",
   }
 
+  const handleStartRide = async () => {
+    navigate(`/start-ride/${bike.bike_id}`);
+  };
+
   return (
     <Marker 
       position={[
@@ -36,7 +43,10 @@ const Bike = ({ bike }) => {
           <h3>Bike Info</h3>
           <p><strong>ID:</strong> {bike.bike_id}</p>
           <p><strong>Battery:</strong> {bike.battery_level}</p>
-          <button style={startRideButton}>
+          <button
+            style={startRideButton}
+            onClick={handleStartRide}
+          >
             Start Ride
           </button>
         </div>
