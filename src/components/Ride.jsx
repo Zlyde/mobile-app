@@ -21,15 +21,17 @@ const Ride = ({ trip }) => {
     )
   }
   return (
-    <div className='ride'>
-        <h1>User: {trip.user_id}</h1>
-        <h2>Bike: {trip.bike_id}</h2>
-        <h3>Trip: {trip.trip_id}</h3>
+    <div className='card-container'>
+      <h4 className='card-title'>Trip: {trip.trip_id}</h4>
+      <div className='card'>
+        <span className="card-info">User: {trip.user_id}</span>
+        <span className="card-info">Bike: {trip.bike_id}</span>
         <button
-          className='half-width-button green-button'
+          className='button green-button'
           onClick={endRide}
         >AVSLUTA RESA
-        </button>
+        </button>        
+      </div>
     </div>
   )
 }
