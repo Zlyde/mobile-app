@@ -30,7 +30,8 @@ export const userRegister =  async (name, email, password) => {
 
 export const userLogin = async (email, password) => {
   const url = 'http://localhost:5001/api/auth/login';
-
+  console.log(email, password);
+  
   const requestOptions = {
     method: 'POST',
     headers: {
@@ -44,6 +45,8 @@ export const userLogin = async (email, password) => {
     if (!response.ok) throw new Error('Inloggning misslyckades');
 
     const data = await response.json();
+    console.log("Data:", data);
+    
 
     // Kontrollera om backend har skickat en felmeddelande
     if (data.error) {

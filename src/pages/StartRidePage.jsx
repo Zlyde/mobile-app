@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Ride from "../components/Ride";
 import { useParams, useNavigate } from 'react-router-dom';
 import { startTrip } from '../utils/TripCall';
 
@@ -12,7 +11,7 @@ const StartRidePage = () => {
 
     const getTrip = async () => {
         try {
-            const data = await startTrip(parseInt(bikeId), user.user_id);
+            const data = await startTrip(parseInt(bikeId), user.userId);
             
             sessionStorage.setItem('ongoingTrip', JSON.stringify(data))
             navigate('/ongoing')
