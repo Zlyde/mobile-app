@@ -31,7 +31,7 @@ const UserRegisterPage = () => {
       <header className="register-header">
         <h1>Registrera dig</h1>
       </header>
-      <form className="register-form" onSubmit={handleRegister}>
+      <form className="login-form" onSubmit={handleRegister}>
         <div className="form-group">
           <label htmlFor="name">Namn</label>
           <input
@@ -65,12 +65,12 @@ const UserRegisterPage = () => {
             required
           />
         </div>
-        <button type="submit" className="register-button">
+        <button type="submit" className="btn primary-btn">
           Registrera
         </button>
       </form>
       <Link to='/'>
-        Logga in
+        Logga in här
       </Link>
     </div>
   )

@@ -30,7 +30,6 @@ export const userRegister =  async (name, email, password) => {
 
 export const userLogin = async (email, password) => {
   const url = 'http://localhost:5001/api/auth/login';
-  console.log(email, password);
   
   const requestOptions = {
     method: 'POST',

@@ -7,13 +7,28 @@
 .main {
   margin: 0 auto;
   max-width: min-content;
-  min-width: 300px;
+  min-width: 400px;
   min-height: 78vh;
   background: $white;
   border-left: 1px solid $light-grey;
   border-right: 1px solid $light-grey;
   padding: 1rem;
-  margin-bottom: 1.4rem;
   line-height: $line-height;
   font-size: $body-font-size;
+}
+
+@media (max-width: 1024px) {
+  .main {
+    margin: none;
+    max-width: none;
+    min-width: none;
+    min-height: none;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+}
+
+a {
+  color: $primary-color;
 }

@@ -1,5 +1,5 @@
 .card-container {
-  border: 1px solid $orange;
+  border: 1px solid $secondary-color;
   box-sizing: border-box;
   padding: 1rem;
   margin-bottom: 1rem;
@@ -17,8 +17,8 @@
 .card-title {
   font-size: $body-font-size;
   display: block;
-  color: $light-blue;
-  background-color: lighten($orange, 20%);
+  color: $text-color;
+  background-color: lighten($secondary-color, 20%);
   padding: 4px 12px;
   margin-top: 0;
 }

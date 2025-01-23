@@ -3,16 +3,27 @@ import { Marker, Popup } from 'react-leaflet'
 import { useNavigate } from 'react-router-dom';
 import L from 'leaflet'
 import scooterImg from '../assets/scooter.png'
+import usedScooter from '../assets/electric-scooter.png'
 
 const Bike = ({ bike }) => {
   const navigate = useNavigate();
+  let theImg = scooterImg;
+  let theData = sessionStorage.getItem("ongoingTrip")
+  let theTrip = JSON.parse(theData)
   
-  if (!bike || !bike.location || !bike.location.coordinates || bike.status !== "available") {
-    return null
+  if (theTrip && bike.bike_id == theTrip.bike_id) {
+    theImg = usedScooter;
+  }
+  if (!bike || !bike.location || !bike.location.coordinates || bike.status !== "available" || bike.battery_level < 50) {
+    if (theTrip && bike.bike_id == theTrip.bike_id) {
+      theImg = usedScooter;
+    } else {
+      return null
+    }
   }
 
   const bikeIcon = new L.icon({
-    iconUrl: scooterImg,
+    iconUrl: theImg,
     iconSize: [32, 32],
     iconAnchor: [16, 16]
   })

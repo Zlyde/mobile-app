@@ -27,7 +27,7 @@ const Navigation = () => {
     },
     { path: "/reset-password", name: "Reset Password", hidden: true },
     { path: "/map", name: "Hyr", hidden: !user },
-    { path: "/ongoing", name: "Pågående", hidden: !user }
+    { path: "/ongoing", name: "Pågående resa", hidden: !user }
   ];
 
   return (
@@ -38,9 +38,14 @@ const Navigation = () => {
           <Link key={route.path} to={route.path}>
             {route.name}
           </Link>
+/*           (<button className="btn primary-btn"
+          onClick={navigate(route.path)}
+          >
+            {route.name}
+          </button>) */
         ))}
         { user && (
-          <button className="blue-button"
+          <button className="btn primary-btn"
           onClick={handleLogout}
           >
             Logout

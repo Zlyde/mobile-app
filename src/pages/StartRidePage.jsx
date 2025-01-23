@@ -11,7 +11,7 @@ const StartRidePage = () => {
 
     const getTrip = async () => {
         try {
-            const data = await startTrip(parseInt(bikeId), user.userId);
+            const data = await startTrip(parseInt(bikeId), user.user_id);
             
             sessionStorage.setItem('ongoingTrip', JSON.stringify(data))
             navigate('/ongoing')

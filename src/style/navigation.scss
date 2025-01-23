@@ -2,12 +2,11 @@
   position: fixed;
   bottom: 0;
   overflow: hidden;
-  border-top: 4px solid #f96d00;
   width: 100%;
   height: 4.2rem;
   padding-top: 0.8rem;
   padding-bottom: 0.8rem;
-  background: #393e46;
+  background: $primary-color;
   display: flex;
   flex-flow: row nowrap;
   flex-wrap: wrap;
@@ -16,11 +15,11 @@
 
 .bottom-nav a {
   text-align: center;
-  color: $white;
+  color: $text-color;
 }
 
 .bottom-nav a.active {
-  color: $dark-blue;
+  color: $text-color;
 }
 
 .bottom-nav i {

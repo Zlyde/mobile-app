@@ -1,5 +1,5 @@
 const Header = () => {
-  const title = "Svenska Sparkcyklar AB";
+  const title = "ZOOMIES";
 
   return (
     <header className="header">

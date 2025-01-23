@@ -10,37 +10,55 @@
 .main {
   margin: 0 auto;
   max-width: min-content;
-  min-width: 300px;
+  min-width: 400px;
   min-height: 78vh;
   background: #fff;
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
   padding: 1rem;
-  margin-bottom: 1.4rem;
   line-height: 1.4;
   font-size: 1.4rem;
 }
 
+@media (max-width: 1024px) {
+  .main {
+    margin: none;
+    max-width: none;
+    min-width: none;
+    min-height: none;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+}
+a {
+  color: rgb(188, 196, 173);
+}
+
 .header {
-  background-color: #222831;
-  color: #fff;
+  background-color: rgb(188, 196, 173);
+  color: #333;
   position: relative;
   height: 8em;
   text-align: center;
   line-height: 8em;
-  border-bottom: 4px solid #f96d00;
 }
 
+/* 
+@media (max-width: 452px) {
+  .header h1 {
+    font-size: 150%;
+  }
+} */
 .bottom-nav {
   position: fixed;
   bottom: 0;
   overflow: hidden;
-  border-top: 4px solid #f96d00;
   width: 100%;
   height: 4.2rem;
   padding-top: 0.8rem;
   padding-bottom: 0.8rem;
-  background: #393e46;
+  background: rgb(188, 196, 173);
   display: flex;
   flex-flow: row nowrap;
   flex-wrap: wrap;
@@ -49,11 +67,11 @@
 
 .bottom-nav a {
   text-align: center;
-  color: #fff;
+  color: #333;
 }
 
 .bottom-nav a.active {
-  color: #222831;
+  color: #333;
 }
 
 .bottom-nav i {
@@ -96,12 +114,11 @@ body {
   background-color: #eee;
 }
 
-h1,
+/* h1,
 h2,
 h4 {
-  font-family: "Source Sans Pro", sans-serif;
-}
-
+  font-family: $font-header;
+} */
 html {
   font-size: 100%;
 }
@@ -147,113 +164,166 @@ p {
 }
 
 .button {
-  color: #333;
-  background-color: #fff;
-  background-image: linear-gradient(#fff, #cccccc);
-  border: 1px solid #cccccc;
+  background-color: rgb(188, 196, 173);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 10px 15px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+.button:hover {
+  background-color: rgb(188, 196, 173);
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgb(111, 142, 131);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn {
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.primary-btn {
+  background-color: rgb(111, 142, 131);
+  color: #fff;
+}
+
+.primary-btn:hover {
+  background-color: rgb(91, 122, 111);
+}
+
+.secondary-btn {
+  margin-top: 10px;
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.secondary-btn:hover {
+  background-color: #5a6268;
+}
+
+/* .button {
+  color: $almost-black;
+  background-color: $white;
+  background-image: linear-gradient($white, darken($white, 20%));
+  border: 1px solid darken($white, 20%);
   text-decoration: none;
   box-sizing: border-box;
   display: inline-block;
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 1.4rem;
+  font-family: $font-header;
+  font-size: $body-font-size;
   padding: 0.4rem 1rem;
   text-align: center;
   border-radius: 0.2rem;
-  line-height: 1.4;
-  margin-bottom: 1.96rem;
+  line-height: $line-height;
+  margin-bottom: $body-font-size * $line-height;
 }
 
 .button:hover {
-  background-color: rgb(178.5, 178.5, 178.5);
+  background-color: darken($white, 30%);
   background-image: none;
 }
 
 .button:active {
-  background-color: rgb(165.75, 165.75, 165.75);
+  background-color: darken($white, 35%);
   background-image: none;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 2px 4px
+    rgba(red($black), green($black), blue($black), 0.15);
 }
 
 .full-width-button {
   width: 100%;
   display: block;
-  margin-bottom: 1.96rem;
+  margin-bottom: $body-font-size * $line-height;
 }
 
 .half-width-button {
   width: 50%;
   display: inline-block;
-  margin-bottom: 1.96rem;
+  margin-bottom: $body-font-size * $line-height;
 }
 
 .blue-button {
   color: #fff;
-  background-color: #0074d9;
-  background-image: linear-gradient(#0074d9, rgb(0, 61.4746543779, 115));
-  border-color: rgb(0, 61.4746543779, 115);
+  background-color: $blue;
+  background-image: linear-gradient($blue, darken($blue, 20%));
+  border-color: darken($blue, 20%);
 }
 
 .blue-button:hover {
-  background-color: rgb(0, 34.2119815668, 64);
+  background-color: darken($blue, 30%);
   background-image: none;
 }
 
 .blue-button:active {
-  background-color: rgb(0, 20.5806451613, 38.5);
+  background-color: darken($blue, 35%);
   background-image: none;
 }
 
 .red-button {
   color: #fff;
-  background-color: #ff4136;
-  background-image: linear-gradient(#ff4136, rgb(207, 11.328358209, 0));
-  border-color: rgb(207, 11.328358209, 0);
+  background-color: $red;
+  background-image: linear-gradient($red, darken($red, 20%));
+  border-color: darken($red, 20%);
 }
 
 .red-button:hover {
-  background-color: rgb(156, 8.5373134328, 0);
+  background-color: darken($red, 30%);
   background-image: none;
 }
 
 .red-button:active {
-  background-color: rgb(130.5, 7.1417910448, 0);
+  background-color: darken($red, 35%);
   background-image: none;
 }
 
 .yellow-button {
   color: #fff;
-  background-color: #ffdc00;
-  background-image: linear-gradient(#ffdc00, #998400);
-  border-color: #998400;
+  background-color: $yellow;
+  background-image: linear-gradient($yellow, darken($yellow, 20%));
+  border-color: darken($yellow, 20%);
 }
 
 .yellow-button:hover {
-  background-color: #665800;
+  background-color: darken($yellow, 30%);
   background-image: none;
 }
 
 .yellow-button:active {
-  background-color: rgb(76.5, 66, 0);
+  background-color: darken($yellow, 35%);
   background-image: none;
 }
 
 .green-button {
   color: #fff;
-  background-color: #2ecc40;
-  background-image: linear-gradient(#2ecc40, rgb(27.232, 120.768, 37.888));
-  border-color: rgb(27.232, 120.768, 37.888);
+  background-color: $green;
+  background-image: linear-gradient($green, darken($green, 20%));
+  border-color: darken($green, 20%);
 }
 
 .green-button:hover {
-  background-color: rgb(17.848, 79.152, 24.832);
+  background-color: darken($green, 30%);
   background-image: none;
 }
 
 .green-button:active {
-  background-color: rgb(13.156, 58.344, 18.304);
+  background-color: darken($green, 35%);
   background-image: none;
 }
-
+ */
 .input {
   font-size: 1.4rem;
   line-height: 1.4;
@@ -294,8 +364,45 @@ p {
     width: 100%;
   }
 }
+.login-form {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+.login-form .form-group {
+  margin-bottom: 15px;
+}
+.login-form .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.login-form .form-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.login-form .btn-primary {
+  background-color: rgb(188, 196, 173);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.login-form .btn-primary:hover {
+  background-color: rgb(163.7659574468, 174.6595744681, 143.3404255319);
+}
+
 .card-container {
-  border: 1px solid #f96d00;
+  border: 1px solid rgb(201, 201, 176);
   box-sizing: border-box;
   padding: 1rem;
   margin-bottom: 1rem;
@@ -313,8 +420,8 @@ p {
 .card-title {
   font-size: 1.4rem;
   display: block;
-  color: #393e46;
-  background-color: rgb(255, 165.6024096386, 96);
+  color: #333;
+  background-color: rgb(242.4135338346, 242.4135338346, 236.5864661654);
   padding: 4px 12px;
   margin-top: 0;
 }
@@ -393,7 +500,7 @@ p {
     font-weight: bold;
   }
   .table-stacked td:first-child {
-    border-top: 1px solid #222831;
+    border-top: 1px solid rgb(201, 201, 176);
   }
 }
 .toast {
@@ -402,9 +509,7 @@ p {
   right: 0;
   transform: translateY(100%);
   opacity: 0;
-  transition:
-    opacity 500ms,
-    transform 500ms;
+  transition: opacity 500ms, transform 500ms;
 }
 
 .toast.visible {
@@ -415,15 +520,14 @@ p {
 .toast-body {
   margin: 28px;
   padding: 20px 24px;
-  background-color: #f96d00;
+  background-color: rgb(201, 201, 176);
   color: #fff;
   border-radius: 4px;
 }
 
 .map {
-  height: 50vh;
-  width: 50vw;
-  margin-bottom: 1em;
+  height: 75vh;
+  width: 100%;
 }
 
 .canvas {

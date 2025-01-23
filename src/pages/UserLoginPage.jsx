@@ -75,11 +75,14 @@ const UserLoginPage = () => {
             Logga in
           </button>
         </form>
-      <button onClick={handleGitHubLogin}>
+      <button
+        className='btn primary-btn'
+        onClick={handleGitHubLogin}>
         Login with GitHub
       </button>
+      <br></br>
       <Link to="/register">
-        Registrera dig
+        Registrera dig här
       </Link>
     </div>
   );
