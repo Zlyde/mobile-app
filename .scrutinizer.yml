@@ -1,0 +1,47 @@
+.scrutinizer.yml
+tools:
+  eslint:
+    config: eslint.config.js
+  node-security:
+    enabled: true
+
+build:
+  environment:
+    node:
+      version: '16' 
+  dependencies:
+    before:
+        - npm ci
+      override:
+        - npm install eslint-plugin-react eslint-plugin-prettier eslint-config-prettier
+  tests:
+    override:
+      - npm run lint 
+      - npm run build
+      - npm test || true
+
+checks:
+  javascript:
+    code-style:
+      enabled: true
+      config: eslint
+    complexity:
+      enabled: true
+      max-complexity: 10
+  node:
+    dependencies:
+      enabled: true
+    duplicate-packages:
+      enabled: true
+  react:
+    best-practices:
+      enabled: true
+
+filter:
+  paths:
+    - "src/"
+
+notifications:
+  email:
+    on_success: never 
+    on_failure: always

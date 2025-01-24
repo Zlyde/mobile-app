@@ -1,5 +1,7 @@
+import API_VERSION from "../config/api_version"
+
 export const fetchBikes = async () => {
-  const url = 'http://localhost:5001/api/bike'
+  const url = `http://localhost:5001${API_VERSION}/bike`
 
   try {
     const response = await fetch(url)
@@ -12,7 +14,7 @@ export const fetchBikes = async () => {
 }
 
 export const fetchBikeById = async (bike_id) => {
-  const url = `http://localhost:5001/api/bike/${bike_id}`
+  const url = `http://localhost:5001${API_VERSION}/bike/${bike_id}`
 
   try {
     const response = await fetch(url)

@@ -1,6 +1,8 @@
+import API_VERSION from "../config/api_version"
+
 export const startTrip = async (bike_id, user_id) => {
     
-    const url = 'http://localhost:5001/api/trip/start'
+    const url = `http://localhost:5001${API_VERSION}/trip/start`
     
     const requestOptions = {
         method: 'POST',
@@ -20,7 +22,7 @@ export const startTrip = async (bike_id, user_id) => {
 export const endTrip = async (trip_id) => {
   console.log(trip_id);
     
-  const url = `http://localhost:5001/api/trip/end/${trip_id}`
+  const url = `http://localhost:5001${API_VERSION}/trip/end/${trip_id}`
 
   const requestOptions = {
     method: 'PUT',

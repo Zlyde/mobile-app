@@ -1,5 +1,7 @@
+import API_VERSION from "../config/api_version"
+
 export const userRegister =  async (name, email, password) => {
-  const url = 'http://localhost:5001/api/auth/register'
+  const url = `http://localhost:5001${API_VERSION}/auth/register`
 
   const requestOptions = {
     method: 'POST',
@@ -29,7 +31,7 @@ export const userRegister =  async (name, email, password) => {
 // }
 
 export const userLogin = async (email, password) => {
-  const url = 'http://localhost:5001/api/auth/login';
+  const url = `http://localhost:5001${API_VERSION}/auth/login`;
   
   const requestOptions = {
     method: 'POST',
