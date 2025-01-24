@@ -10,9 +10,9 @@ build:
       version: '16' 
   dependencies:
     before:
-        - npm ci
-      override:
-        - npm install eslint-plugin-react eslint-plugin-prettier eslint-config-prettier
+      - npm ci
+    override:
+      - npm install eslint-plugin-react eslint-plugin-prettier eslint-config-prettier
   tests:
     override:
       - npm run lint 
