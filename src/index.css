@@ -36,12 +36,17 @@ a {
 }
 
 .header {
-  background-color: rgb(188, 196, 173);
+  background-color: #a59e90;
   color: #333;
-  position: relative;
+  display: flex; /* Enables flexbox layout */
+  align-items: center; /* Centers items vertically */
+  gap: 10%;
   height: 8em;
-  text-align: center;
-  line-height: 8em;
+}
+
+.header-logo {
+  height: 100%; /* Makes the logo height match the header */
+  width: auto; /* Maintains the aspect ratio */
 }
 
 /* 
