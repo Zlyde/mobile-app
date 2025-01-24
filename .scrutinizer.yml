@@ -5,9 +5,8 @@ tools:
     enabled: true
 
 build:
-  environment:
-    node:
-      version: '16' 
+  nodes:
+    runtime: "nodejs:16" # Specify the Node.js runtime directly
   commands:
     - npm install 
     - npm run lint
