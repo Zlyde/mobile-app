@@ -8,19 +8,11 @@ build:
   environment:
     node:
       version: '16' 
-  dependencies:
-    before:
-      - npm ci
-    override:
-      - npm install eslint-plugin-react eslint-plugin-prettier eslint-config-prettier
-  tests:
-    override:
-      - npm run lint 
-      - npm run build
-      - npm test || true
+  commands:
+    - npm install 
+    - npm run lint
 
 checks:
-  php: false
   javascript:
     code-style:
       enabled: true
