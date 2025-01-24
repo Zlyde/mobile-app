@@ -6,7 +6,7 @@ describe('Header Component', () => {
   it('renders a header with a title', () => {
     render(<Header />);
 
-    const headerElement = screen.getByText(/Svenska Sparkcyklar AB/i);
+    const headerElement = screen.getByText(/ZOOMIES/i);
     expect(headerElement).toBeInTheDocument();
 
   });
