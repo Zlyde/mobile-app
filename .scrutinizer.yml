@@ -20,6 +20,7 @@ build:
       - npm test || true
 
 checks:
+  php: false
   javascript:
     code-style:
       enabled: true
