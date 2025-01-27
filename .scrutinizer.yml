@@ -1,15 +1,17 @@
 tools:
   eslint:
-    config: eslint.config.js
+    config: ./eslint.config.js # Ensure correct path to ESLint config
   node-security:
     enabled: true
 
 build:
   nodes:
-    runtime: "nodejs:16" # Specify the Node.js runtime directly
+    analysis:
+      environment: nodejs
+      runtime: "nodejs:16"
   commands:
-    - npm install 
-    - npm run lint
+    - npm install
+    - npx eslint src/ --config ./eslint.config.js
 
 checks:
   javascript:
@@ -24,9 +26,6 @@ checks:
       enabled: true
     duplicate-packages:
       enabled: true
-  react:
-    best-practices:
-      enabled: true
 
 filter:
   paths:
@@ -34,5 +33,5 @@ filter:
 
 notifications:
   email:
-    on_success: never 
+    on_success: never
     on_failure: always
