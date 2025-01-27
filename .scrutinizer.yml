@@ -10,7 +10,7 @@ build:
         analysis:     
             project_setup:
                 override:
-                    - npm install -g js-scrutinizer # Install the Scrutinizer CLI
+                    - npm install # Install your dependencies
             tests:
                 override:
                     - npm run lint # Run your linting script
