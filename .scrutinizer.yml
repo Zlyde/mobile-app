@@ -11,17 +11,3 @@ build:
                 override: true
             tests:
                 override: [js-scrutinizer-run]
-
-filter:
-    paths:
-        - "src/" # Ensure it matches the actual location of your source code
-        - "tests/" # Include tests if you want them analyzed
-
-tools:
-    eslint: true
-    node-security: true
-
-notifications:
-    email:
-        on_success: never
-        on_failure: always
