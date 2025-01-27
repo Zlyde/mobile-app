@@ -9,10 +9,10 @@ build:
                     version: 16 # Specify the Node.js version you are using
         analysis:     
             project_setup:
-                override: false # Allow Scrutinizer to automatically set up the project
+                override:
+                    - npm install -g js-scrutinizer # Install the Scrutinizer CLI
             tests:
                 override:
-                    - npm install # Install your dependencies
                     - npm run lint # Run your linting script
                     - js-scrutinizer-run # Run the Scrutinizer analysis
 filter:
