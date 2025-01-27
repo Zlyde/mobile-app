@@ -1,37 +1,9 @@
-tools:
-  eslint:
-    config: ./eslint.config.js # Ensure correct path to ESLint config
-  node-security:
-    enabled: true
+checks:
+    javascript: true
 
 build:
-  nodes:
-    analysis:
-      environment:
-        node: "16"
-  commands:
-    - npm install
-    - npm run lint
-
-checks:
-  javascript:
-    code-style:
-      enabled: true
-      config: eslint
-    complexity:
-      enabled: true
-      max-complexity: 10
-  node:
-    dependencies:
-      enabled: true
-    duplicate-packages:
-      enabled: true
-
-filter:
-  paths:
-    - "src/"
-
-notifications:
-  email:
-    on_success: never
-    on_failure: always
+    nodes:
+        analysis:
+            tests:
+                override:
+                    - js-scrutinizer-run
