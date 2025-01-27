@@ -43,6 +43,7 @@ Innan du startar projektet behöver du följande:
 - npm eller yarn för att installera beroenden
 
 Översikt av de vitkgiaste filerna och mapparna:
+```bash
 src/
 ├── assets/           # bildfiler
 ├── components/       # De olika komponenterna för att bygga/visa upp sidorna
@@ -56,3 +57,4 @@ src/
 ├── main.jsx          # Projektets ingångspunkt
 ├── socket.jsx        # Socket.io
 ├── .env              # Miljövariabler
+```
