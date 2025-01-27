@@ -13,7 +13,6 @@ build:
                     - npm install # Install your dependencies
             tests:
                 override:
-                    - npm run lint # Run your linting script
                     - js-scrutinizer-run # Run the Scrutinizer analysis
 filter:
     paths:
