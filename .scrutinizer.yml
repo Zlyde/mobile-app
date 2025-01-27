@@ -7,11 +7,11 @@ tools:
 build:
   nodes:
     analysis:
-      environment: nodejs
-      runtime: "nodejs:16"
+      environment:
+        node: "16"
   commands:
     - npm install
-    - npx eslint src/ --config ./eslint.config.js
+    - npm run lint
 
 checks:
   javascript:
