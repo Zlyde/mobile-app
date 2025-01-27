@@ -3,9 +3,10 @@ checks:
 
 build:
     nodes:
-        environment:
-            node:
-                version: 16 # Specify the Node.js version you are using
+        my-tests:
+            environment:
+                node:
+                    version: 16 # Specify the Node.js version you are using
         analysis:     
             project_setup:
                 override: false # Allow Scrutinizer to automatically set up the project
