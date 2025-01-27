@@ -3,11 +3,17 @@ checks:
 
 build:
     nodes:
-        analysis:
+        environment:
+            node:
+                version: 16 # Specify the Node.js version you are using
+        analysis:     
+            project_setup:
+                override: false # Allow Scrutinizer to automatically set up the project
             tests:
                 override:
-                    - js-scrutinizer-run
+                    - npm install # Install your dependencies
+                    - npm run lint # Run your linting script
+                    - js-scrutinizer-run # Run the Scrutinizer analysis
 filter:
     paths:
         - "src/" # Include the directory containing your source code
-        - "tests/" # Optionally include tests if you want them analyzed
