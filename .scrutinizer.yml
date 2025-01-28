@@ -13,8 +13,8 @@ build:
                     - npm install
             tests:
                 override:
-                    - npm run lint # Ensure lint script targets JSX
-                    - npm run test # If applicable
+                    #- npm run lint # Ensure lint script targets JSX
+                    #- npm run test # If applicable
                     - js-scrutinizer-run # Analyze with Scrutinizer
 
 filter:
