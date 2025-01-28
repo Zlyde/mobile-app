@@ -21,8 +21,3 @@ filter:
     paths:
         - "src/"
         - "**/*.jsx"
-
-notifications:
-    email:
-        on_success: never
-        on_failure: always
