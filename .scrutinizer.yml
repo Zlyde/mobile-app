@@ -3,15 +3,29 @@ checks:
 
 build:
     nodes:
-        my-tests:
-            environment:
-                node:
-                    version: 16 # Specify the Node.js version you are using
+        environment:
+            node:
+                version: 16
         analysis:
+            project_setup:
+                override:
+                    - npm install
             tests:
                 override:
-                    - js-scrutinizer-run # Run the Scrutinizer analysis
+                    - npm run lint # Ensure lint script targets JSX
+                    - npm run test # If applicable
+                    - js-scrutinizer-run # Analyze with Scrutinizer
+
 filter:
     paths:
-        - "src/" # Include the directory containing your source code
-        - "**/*.jsx" # Include JSX files
+        - "src/"
+        - "**/*.jsx"
+
+tools:
+    eslint: true
+    node-security: true
+
+notifications:
+    email:
+        on_success: never
+        on_failure: always
