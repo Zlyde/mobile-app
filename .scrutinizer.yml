@@ -6,24 +6,6 @@ build:
         my-tests:
             environment:
                 node:
-                    version: 16 # Specify the Node.js version you are using
-        analysis:
-            tests:
-                override:
-                    - js-scrutinizer-run # Run the Scrutinizer analysis
-filter:
-    paths:
-        - "src/" # Include the directory containing your source code
-        - "**/*.jsx" # Include JSX files
-
- checks:
-    javascript: true
-
-build:
-    nodes:
-        my-tests:
-            environment:
-                node:
                     version: 16
         analysis:
             project_setup:
