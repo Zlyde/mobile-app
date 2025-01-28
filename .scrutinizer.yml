@@ -7,13 +7,11 @@ build:
             environment:
                 node:
                     version: 16 # Specify the Node.js version you are using
-        analysis:     
-            project_setup:
-                override:
-                    - npm install # Install your dependencies
+        analysis:
             tests:
                 override:
                     - js-scrutinizer-run # Run the Scrutinizer analysis
 filter:
     paths:
         - "src/" # Include the directory containing your source code
+        - "**/*.jsx" # Include JSX files
