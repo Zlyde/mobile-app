@@ -1,38 +1,23 @@
-tools:
-  eslint:
-    config: eslint.config.js
-  node-security:
-    enabled: true
+checks:
+    javascript: true
 
 build:
-  nodes:
-    runtime: "nodejs:16" # Specify the Node.js runtime directly
-  commands:
-    - npm install 
-    - npm run lint
-
-checks:
-  javascript:
-    code-style:
-      enabled: true
-      config: eslint
-    complexity:
-      enabled: true
-      max-complexity: 10
-  node:
-    dependencies:
-      enabled: true
-    duplicate-packages:
-      enabled: true
-  react:
-    best-practices:
-      enabled: true
+    nodes:
+        my-tests:
+            environment:
+                node:
+                    version: 16
+        analysis:
+            project_setup:
+                override:
+                    - npm install
+            tests:
+                override:
+                    #- npm run lint # Ensure lint script targets JSX
+                    #- npm run test # If applicable
+                    - js-scrutinizer-run # Analyze with Scrutinizer
 
 filter:
-  paths:
-    - "src/"
-
-notifications:
-  email:
-    on_success: never 
-    on_failure: always
+    paths:
+        - "src/"
+        - "**/*.jsx"
